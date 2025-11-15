@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trying_flutter/home/ui_component/calculator_pad.dart';
 import 'package:trying_flutter/color_picker/color_picker_page.dart';
 import 'package:trying_flutter/navigation/nav1_page.dart';
+import 'package:trying_flutter/navigation/nav2/nav2_demo_app.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
   }
 
   @override
@@ -39,6 +40,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           CalculatorPad(),
           ColorPickerPage(),
           Nav1Page(),
+          Nav2DemoApp(),
         ],
       ),
       bottomNavigationBar: Container(
@@ -60,6 +62,10 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             Tab(
               icon: Icon(Icons.navigation),
               text: "Nav1.0",
+            ),
+            Tab(
+              icon: Icon(Icons.route),
+              text: "Nav2.0",
             ),
           ],
         ),
