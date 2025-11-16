@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trying_flutter/home/home_page.dart';
+import 'package:trying_flutter/navigation/route_generator.dart';
 
 class App extends StatelessWidget {
 
@@ -8,7 +9,9 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: const HomePage(),
+      onGenerateRoute: RouteGenerator.generateRoute,
+      onUnknownRoute: RouteGenerator.onUnknownRoute,
     );
   }
 }
